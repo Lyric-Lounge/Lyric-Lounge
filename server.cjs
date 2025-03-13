@@ -1,3 +1,8 @@
+const { createUser } = require('./db/users.cjs');
+const { createUserSongs } = require('./db/user-songs.cjs');
+const { createRecommendedSongs } = require('./db/recommended-songs.cjs');
+const { createFriendsList } = require('./db/friends-list.cjs')
+
 const client = require('./db/client.cjs');
 client.connect();
 
@@ -38,7 +43,7 @@ app.get(`/artists/{id}`, async (req, res, next) => {
   return //we dont know spotify answer yet
 })
 
-// assume the logInUser and registerUser functions are that name ( can be edited once functions are completed)
+// assume the logInUser and createUser functions are that name ( can be edited once functions are completed)
 // login for our backend, assuming we have encryption set up w/ tokens
 app.post('/api/login/:id', async (req, res, next) => {
   const { username, password } = req.body;
@@ -50,14 +55,29 @@ app.post('/api/login/:id', async (req, res, next) => {
   }
 })
 
-// register
-app.post('/api/register', async (req, res, next) => {
-  const { username, password, email } = req.body;
+//createUserSongs (Spotify API needed)
+//createRecommendedSongs (Spotify API needed)
+//createFriendsList
+app.post('/api/friends', async (req, res, next) => {
+
   try {
-    const regUser = await registerUser(username, password, email);
+    const { usersId, friendId } = req.body
+    const newFriend = await createFriendsList(usersId, friendId);
+    res.send(newFriend);
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
+// createUser
+app.post('/api/register', async (req, res, next) => {
+  
+  try {
+    const { username, password, email } = req.body;
+    const regUser = await createUser(username, password, email);
     res.send(regUser);
   } catch (err) {
-    res.send({ message: `Bad Credentials` });
+    res.send(err.message);
   }
 });
 
