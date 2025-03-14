@@ -11,10 +11,18 @@ const App = () => {
 
   return (
     <>
-    <h1>Lyric Lounge</h1>
-
-
-    <spotifyLogin/>
+    <Router>
+      <NavBar />
+      <h1>Lyric Lounge</h1>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/spotify-login" element={<SpotifyLogin />} />
+        <Route path="/player" element={<Player />} />
+      </Routes>
+    </Router>
     </>
   )
 }
