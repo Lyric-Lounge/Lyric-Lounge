@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <nav>
       <Link to='/'>Homepage</Link>
-      <Link to='/profile/:id'>Profile</Link>
+      <Link to='/profile'>Profile</Link>
       <Link to="/login">Login</Link>
       <Link to="/register">Register</Link>
       <Link to="/spotify-login">Spotify Login</Link>
