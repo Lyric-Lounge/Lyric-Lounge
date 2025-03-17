@@ -1,9 +1,9 @@
-import SpotifyLogin from './components/spotifyLogin.jsx';
-import Login from './components/login.jsx';
-import Home from './components/home';
-import Register from './components/register.jsx';
-import NavBar from './components/navbar.jsx';
-import SplashScreen from './components/SplashPage.jsx';
+import SpotifyLogin from './components/Spotifylogin.jsx';
+import Login from './components/Login.jsx';
+import Home from './components/Home.jsx';
+import Register from './components/Register.jsx';
+import NavBar from './components/Navbar.jsx';
+import SplashScreen from './components/Splashpage.jsx';
 import Profile from './components/Profile.jsx';
 /* import Player from './components/Player.jsx'; */
 
