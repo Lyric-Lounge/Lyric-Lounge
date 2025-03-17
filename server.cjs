@@ -1,7 +1,7 @@
-const { createUser } = require('./db/users.cjs');
+const { createUser, fetchUsers } = require('./db/users.cjs');
 const { createUserSongs } = require('./db/user-songs.cjs');
 const { createRecommendedSongs } = require('./db/recommended-songs.cjs');
-const { createFriendsList } = require('./db/friends-list.cjs')
+const { createFriendsList, fetchFriends } = require('./db/friends-list.cjs')
 
 const client = require('./db/client.cjs');
 client.connect();
@@ -9,33 +9,46 @@ client.connect();
 const express = require('express');
 const app = express();
 
-
-const SpotifyWebApi = require('spotify-web-api-node');
-
 app.use(express.json());
 app.use(express.static('dist'));
 
+//    GET REQUESTS    //
+/* VVVVVVVVVVVVVVVVVVVVVV */
+//get general
+app.get('/', (req, res) => {
+  res.send('Welcome to The Lyric Lounge!');
+})
 
+//get the ids of the selected user's friends
+app.get('/api/friends/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const friends = await fetchFriends(id)
+    if (friends === undefined) {
+      res.send('Friends not Found');
+    } else {
+      res.send(friends);
+    }
+  } catch (err) {
+    res.send(err.message);
+  }
+})
 
+//get users by id
+app.get('/api/users/:id', async (req, res) => {
+  const { id } = req.params
+  try {
+    const user = await fetchUsers(id)
+    if (user === undefined) {
+      res.send('User not Found');
+    } else {
+      res.send(user)
+    }
+  } catch (err) {
+    res.send(err.messgae);
+  }
+})
 
-app.post('/spotifylogin', (req, res, next) => {
-  const spotifyApi = new SpotifyWebApi({
-    redirectUri: 'http//loclathost:3000',
-    clientId: 'c81b0d87410f47fcad9cbf1ff1690c4c',
-    clientSecret: 'ea37d88e78e24deb9e4e280b04cad557'
-  })
-  spotifyApi.authorizationCodeGrant(code)
-    .then((data) => {
-      res.json({
-        accessToken: data.body.access_token,
-        refreshToken: data.body.refresh_token,
-        expiresIn: data.body.expires_in
-      })
-    })
-    .catch(() => {
-      res.sendStatus(400)
-    })
-  })
 
 //get artist info
 app.get(`/artists/{id}`, async (req, res, next) => {
@@ -43,7 +56,16 @@ app.get(`/artists/{id}`, async (req, res, next) => {
   return //we dont know spotify answer yet
 })
 
+
+
+
+
+
+//    POST REQUESTS   //
+/* VVVVVVVVVVVVVVVVVVVV*/
 // assume the logInUser and createUser functions are that name ( can be edited once functions are completed)
+
+
 // login for our backend, assuming we have encryption set up w/ tokens
 app.post('/api/login/:id', async (req, res, next) => {
   const { username, password } = req.body;
@@ -71,7 +93,7 @@ app.post('/api/friends', async (req, res, next) => {
 
 // createUser
 app.post('/api/register', async (req, res, next) => {
-  
+
   try {
     const { username, password, email } = req.body;
     const regUser = await createUser(username, password, email);
