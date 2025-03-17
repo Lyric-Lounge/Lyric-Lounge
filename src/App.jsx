@@ -4,7 +4,7 @@ import Home from './components/home';
 import Register from './components/register.jsx';
 import NavBar from './components/navbar.jsx';
 import SplashScreen from './components/SplashPage.jsx';
-import Profile from './components/Profile.jsx';
+import Profile from './components/profile.jsx';
 /* import Player from './components/Player.jsx'; */
 
 import { Routes, Route } from 'react-router-dom'
