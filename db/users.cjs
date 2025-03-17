@@ -21,6 +21,18 @@ const createUser = async (userName, password, userEmail) => {
     }
 }
 
+const fetchUsers = async(userId) => {
+  try {
+    const {rows} = await client.query(`
+      SELECT username FROM users WHERE id=${userId};
+    `);
+    return rows;
+  } catch (error) {
+    throw new Error('Bad Fetch')
+  }
+}
+
 module.exports = {
-  createUser
+  createUser,
+  fetchUsers
 }

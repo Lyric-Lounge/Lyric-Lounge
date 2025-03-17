@@ -1,5 +1,16 @@
 const client = require('./client.cjs');
 
+const fetchFriends = async(userId) => {
+  try {
+    const {rows} = await client.query(`
+      SELECT friend_id FROM friends_list WHERE users_id=${userId};
+    `);
+    return rows;
+  } catch (error) {
+    throw new Error('Bad Fetch')
+  }
+}
+
 const createFriendsList = async (userId, friendId) => {
   try {
     await client.query(`
@@ -16,5 +27,6 @@ const createFriendsList = async (userId, friendId) => {
 }
 
 module.exports = {
-  createFriendsList
+  createFriendsList,
+  fetchFriends
 }
