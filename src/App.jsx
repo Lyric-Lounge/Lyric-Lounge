@@ -28,7 +28,6 @@ const App = () => {
         {/* Protected Routes */}
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="player" element={<Player />} />
         {/* <Route path="/player" element={<Player />} /> */}
 
         {/* Catch-all route to splash screen */}
