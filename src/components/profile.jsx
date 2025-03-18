@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from '@mui/joy/Button';
+
 
 const Profile = () => {
   const [topSongs, setTopSongs] = useState([]);
@@ -33,7 +35,22 @@ const Profile = () => {
             <option key={index} value={song}>{song}</option>
           ))}
         </select>
-        <button onClick={addTopSong}>Add to Top Songs</button>
+     <Button
+             variant="contained"
+             type="submit"
+             size="xsm"
+             sx={{
+               marginTop: 2,
+               backgroundColor: '#303f9f', 
+               '&:hover': {
+                 backgroundColor: '#455a64', 
+               },
+             }}
+             onClick={addTopSong}
+          >
+            Add to Top Songs
+          </Button>
+        {/* <button onClick={addTopSong}>Add to Top Songs</button> */}
       </article>
 
       {/* List of Top Songs */}
@@ -60,7 +77,21 @@ const Profile = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <button onClick={addFriend}>Add Friend</button>
+        <Button
+             variant="contained"
+             type="submit"
+             size="xsm"
+             sx={{
+               marginTop: 2,
+               backgroundColor: '#303f9f', 
+               '&:hover': {
+                 backgroundColor: '#455a64', 
+               },
+             }}
+             onClick={addFriend}
+          >
+            Add Friend
+          </Button>
       </section>
 
     </section>
