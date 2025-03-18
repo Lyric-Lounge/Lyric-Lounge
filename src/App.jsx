@@ -14,7 +14,6 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <h1>Lyric Lounge</h1>
       
       <Routes>
         {/* Splash screen appears first and handles redirection */}
@@ -28,7 +27,6 @@ const App = () => {
         {/* Protected Routes */}
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="player" element={<Player />} />
         {/* <Route path="/player" element={<Player />} /> */}
 
         {/* Catch-all route to splash screen */}
