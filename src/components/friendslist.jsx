@@ -1,4 +1,6 @@
 import { Box } from "@mui/material"
+import VariantButtonGroup from "./VariantButton.jsx"
+
 
 const Friendlist = () => {
 
@@ -44,7 +46,9 @@ const Friendlist = () => {
             </span>
           </li>
         </ul>
+        <VariantButtonGroup />
         </Box>
+      
       </section>
   )
 }

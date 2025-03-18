@@ -7,8 +7,12 @@ const Home = () => {
   return (
     <main>
       <header>
-        <h2>Home Page</h2>
+      <h1>Welcome to the Lyric Lounge</h1>    
       </header>
+      
+      <Box sx={{ display: 'flex',  justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
+        <h2>Home Page</h2>
+      </Box>
 
       <Stack direction="row" spacing={2}>
       <Friendlist  />
@@ -18,10 +22,6 @@ const Home = () => {
 
    
       <section>
-    
-        <button>Song Selector</button>
-        <button>Select Friend</button>
-      <button>Send Reccomendation</button>
       </section>
     
 

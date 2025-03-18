@@ -14,7 +14,6 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <h1>Lyric Lounge</h1>
       
       <Routes>
         {/* Splash screen appears first and handles redirection */}
