@@ -1,13 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import SpotifyLogin from './components/spotifyLogin.jsx';
 import Login from './components/login.jsx';
 import Home from './components/home';
 import Register from './components/register.jsx';
 import NavBar from './components/navbar.jsx';
 import SplashScreen from './components/SplashPage.jsx';
-import Profile from './components/profile.jsx';
-/* import Player from './components/Player.jsx'; */
-
-import { Routes, Route } from 'react-router-dom'
+import Profile from './components/Profile.jsx';
+import ProtectedRoute from './components/ProtectedRoutes.jsx';
+// import Player from './components/Player.jsx';
 
 const App = () => {
 
@@ -25,15 +25,15 @@ const App = () => {
         <Route path="/spotify-login" element={<SpotifyLogin />} />
 
         {/* Protected Routes */}
-        <Route path="/home" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        {/* <Route path="/player" element={<Player />} /> */}
+        <Route path="/home" element={<ProtectedRoute element={<Home />} />} />
+        <Route path="/profile" element={<ProtectedRoute element={<Profile />} />} />
+        {/* <Route path="/player" element={<ProtectedRoute element={<Player />} />} /> */}
 
         {/* Catch-all route to splash screen */}
-        {/* <Route path="*" element={<SplashScreen />} /> */}
+        <Route path="*" element={<SplashScreen />} />
       </Routes>
     </>
   )
 }
 
-export default App
+export default App;
