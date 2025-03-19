@@ -122,11 +122,11 @@ app.get(`/artists/{id}`, async (req, res, next) => {
 
 
 // login for our backend, assuming we have encryption set up w/ tokens
-app.post('/api/login/:id', async (req, res, next) => {
+app.post('/api/login', async (req, res, next) => {
   const { username, password } = req.body;
   try {
     const userToken = await logInUser(username, password);
-    res.send({ userToken })
+    res.send({ token: userToken })
   } catch (err) {
     res.send({ message: ' Incorrect Username or Password' })
   }
@@ -152,7 +152,7 @@ app.post('/api/register', async (req, res, next) => {
   try {
     const { username, password, email } = req.body;
     const regUser = await createUser(username, password, email);
-    res.send(regUser);
+    res.send({ token: regUser });
   } catch (err) {
     res.send(err.message);
   }
