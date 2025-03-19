@@ -1,5 +1,4 @@
-import "dotenv/config";
-import fetch from "node-fetch";
+
 
 async function getAccessToken() {
   const url = "https://accounts.spotify.com/api/token";

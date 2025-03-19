@@ -1,5 +1,3 @@
-import "dotenv/config";
-import fetch from "node-fetch";
 import getAccessToken from "./spotifyAuth.jsx";
 
 async function searchSong(songName) {
@@ -30,4 +28,4 @@ async function searchSong(songName) {
 }
 
 // Example Usage
-searchSong("Blinding Lights"); // Replace with your song name
+export default searchSong("Blinding Lights"); // Replace with your song name
