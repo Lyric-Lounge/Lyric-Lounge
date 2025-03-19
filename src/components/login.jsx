@@ -9,7 +9,7 @@ import Button from '@mui/material/Button'; // Material UI Button
 
 
 const Login = () => {
-  const [emailInput, setEmailInput] = useState("");
+  const [userNameInput, setUserNameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [error, setError] = useState(null);
 
@@ -19,13 +19,13 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("https://api.escuelajs.co/api/v1/auth/login", {
+      const response = await fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          email: emailInput,
+          username: userNameInput,
           password: passwordInput,
         }),
       });
@@ -45,20 +45,20 @@ const Login = () => {
 
   return (
     <>
-    <Box sx={{ display: 'flex',  justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
-    <h2>Login</h2>
-    </Box>
-      
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
+        <h2>Login</h2>
+      </Box>
+
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       <form onSubmit={loginUser}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, maxWidth: 300, margin: 'auto' }}>
           <TextField
-            label="Email"
+            label="Username"
             variant="standard"
-            type="email"
-            value={emailInput}
-            onChange={(event) => setEmailInput(event.target.value)}
+            type="text"
+            value={userNameInput}
+            onChange={(event) => setUserNameInput(event.target.value)}
             fullWidth
             required
           />
@@ -71,30 +71,30 @@ const Login = () => {
             fullWidth
             required
           />
-         <Button
-             variant="contained"
-             type="submit"
-             fullWidth
-             sx={{
-               marginTop: 2,
-               backgroundColor: '#303f9f', 
-               '&:hover': {
-                 backgroundColor: '#455a64', 
-               },
-             }}
+          <Button
+            variant="contained"
+            type="submit"
+            fullWidth
+            sx={{
+              marginTop: 2,
+              backgroundColor: '#303f9f',
+              '&:hover': {
+                backgroundColor: '#455a64',
+              },
+            }}
           >
             Login
           </Button>
         </Box>
       </form>
 
-      <Box sx={{ display: 'flex',  justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
-      <p>
-        Need to register? Click{" "}
-        <button onClick={() => navigate("/register")}>
-          here
-        </button>
-      </p>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
+        <p>
+          Need to register? Click{" "}
+          <button onClick={() => navigate("/register")}>
+            here
+          </button>
+        </p>
       </Box>
     </>
   );
