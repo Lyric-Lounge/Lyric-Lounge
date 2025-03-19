@@ -77,6 +77,7 @@ const syncAndSeed = async() => {
   await createFriendsList(1, 2)
   await createFriendsList(2, 3)
   console.log('friends created')
+  await client.end();
 }
 
 syncAndSeed();
