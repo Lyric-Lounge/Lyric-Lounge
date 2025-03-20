@@ -56,11 +56,7 @@ const Register = () => {
   }
 
   return (
-<<<<<<< Updated upstream
-    <div>
-=======
     <div className="bodyDivRegister">
->>>>>>> Stashed changes
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
         <h2>Register</h2>
       </Box>
@@ -82,61 +78,6 @@ const Register = () => {
               />
             </div>
 
-<<<<<<< Updated upstream
-      <form onSubmit={registerUser}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, maxWidth: 300, margin: 'auto' }}>
-          <TextField
-            label="Email"
-            variant="standard"
-            type="email"
-            value={emailInput}
-            onChange={(event) => setEmailInput(event.target.value)}
-            fullWidth
-            required
-          />
-
-          <TextField
-            label="Username"
-            variant="standard"
-            type="text"
-            value={userNameInput}
-            onChange={(event) => setUserNameInput(event.target.value)}
-            fullWidth
-            required
-          />
-
-          <TextField
-            label="Password"
-            variant="standard"
-            type="password"
-            value={passwordInput}
-            onChange={(event) => setPasswordInput(event.target.value)}
-            fullWidth
-            required
-          />
-
-          <Button
-            variant="contained"
-            type="submit"
-            fullWidth
-            sx={{
-              marginTop: 2,
-              backgroundColor: '#303f9f',
-              '&:hover': {
-                backgroundColor: '#455a64',
-              },
-            }}
-          >
-            Register
-          </Button>
-        </Box>
-      </form>
-
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
-        <p>
-          Need to log in? Click{" "}
-          <button onClick={() => navigate("/login")}>here</button>
-=======
             <TextField
               label="User Name"
               variant="standard"
@@ -195,7 +136,6 @@ const Register = () => {
               onClick={() => navigate("/login")}
             >here</Button>
           {/* <button onClick={() => navigate("/login")}>here</button> */}
->>>>>>> Stashed changes
         </p>
       </Box>
     </div>
