@@ -26,7 +26,7 @@ const Profile = () => {
   return (
     <section>
       <h2>Profile</h2>
-
+      <h3>test123</h3>
       {/* Song Selector */}
       <article>
         <select value={selectedSong} onChange={(e) => setSelectedSong(e.target.value)}>
@@ -58,9 +58,11 @@ const Profile = () => {
       <section className="homeFriendsList">
         <h3>Top Songs</h3>
         <ul>
-          {topSongs.map((song, index) => (
-            <li key={index}>{song}</li>
-          ))}
+          <li>Luther - Kendrik Lamar & SZA</li>
+          <li>Die With A Smile - Lady Gaga & Bruno Mars</li>
+          <li>Not Like Us - Kendrik Lamar</li>
+          <li>A Bar Song - Shaboozey</li>
+          <li>TV Off - Kendrik Lamar Featuring Lefty Gunplay</li>
         </ul>
       </section>
 
@@ -68,9 +70,9 @@ const Profile = () => {
       <section>
         <h3>Friends List</h3>
         <ul>
-          {friends.map((friend, index) => (
-            <li key={index}>{friend}</li>
-          ))}
+          <li>Joey</li>
+          <li>Sally</li>
+          <li>Abby</li>
         </ul>
         <input
           type="text"
