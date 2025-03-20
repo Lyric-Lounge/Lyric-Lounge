@@ -71,19 +71,6 @@ const Login = () => {
             fullWidth
             required
           />
-<<<<<<< Updated upstream
-          <Button
-            variant="contained"
-            type="submit"
-            fullWidth
-            sx={{
-              marginTop: 2,
-              backgroundColor: '#303f9f',
-              '&:hover': {
-                backgroundColor: '#455a64',
-              },
-            }}
-=======
          <Button
              variant="contained"
              type="submit"
@@ -96,22 +83,12 @@ const Login = () => {
                  backgroundColor: '#349dfe', 
                },
              }}
->>>>>>> Stashed changes
           >
             Login
           </Button>
         </Box>
       </form>
 
-<<<<<<< Updated upstream
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
-        <p>
-          Need to register? Click{" "}
-          <button onClick={() => navigate("/register")}>
-            here
-          </button>
-        </p>
-=======
       <Box sx={{ display: 'flex',  justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
       <p>
         Need to register? Click{" "}
@@ -133,7 +110,6 @@ const Login = () => {
           here
         </button> */}
       </p>
->>>>>>> Stashed changes
       </Box>
     </>
   );
