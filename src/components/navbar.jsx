@@ -28,7 +28,11 @@ const NavBar = () => {
   };
   
   return (
+<<<<<<< Updated upstream
     <AppBar position="sticky" sx={{ backgroundColor: "#303f9f", padding: "10px" }}>
+=======
+    <AppBar position="sticky" sx={{ backgroundColor: '#0094c6' }}>
+>>>>>>> Stashed changes
       <StyledToolbar>
         <NightlifeSharpIcon />
         <Typography variant="h6">Lyric Lounge</Typography>

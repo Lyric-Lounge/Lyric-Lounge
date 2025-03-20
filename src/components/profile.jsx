@@ -41,9 +41,10 @@ const Profile = () => {
              size="xsm"
              sx={{
                marginTop: 2,
-               backgroundColor: '#303f9f', 
+               backgroundColor: '#0094c6', 
+               color: '#000000',
                '&:hover': {
-                 backgroundColor: '#455a64', 
+                 backgroundColor: '#349dfe', 
                },
              }}
              onClick={addTopSong}
@@ -54,7 +55,7 @@ const Profile = () => {
       </article>
 
       {/* List of Top Songs */}
-      <section>
+      <section className="homeFriendsList">
         <h3>Top Songs</h3>
         <ul>
           {topSongs.map((song, index) => (
@@ -81,11 +82,13 @@ const Profile = () => {
              variant="contained"
              type="submit"
              size="xsm"
+             font-color="white"
              sx={{
                marginTop: 2,
-               backgroundColor: '#303f9f', 
+               backgroundColor: '#0094c6',
+               color: '#000000', 
                '&:hover': {
-                 backgroundColor: '#455a64', 
+                 backgroundColor: '#349dfe', 
                },
              }}
              onClick={addFriend}
