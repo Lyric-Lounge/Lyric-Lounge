@@ -11,9 +11,10 @@ const VariantButtonGroup = () => {
              size="sm"
              sx={{
                marginTop: 2,
-               backgroundColor: '#303f9f', 
+               backgroundColor: '#0094c6', 
+               color: '#000000',
                '&:hover': {
-                 backgroundColor: '#455a64', 
+                 backgroundColor: '#349dfe', 
                },
              }}
           >

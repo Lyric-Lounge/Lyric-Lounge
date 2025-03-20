@@ -7,7 +7,7 @@ const Friendlist = () => {
   return (
 
   <section>
-        <Box component="section" sx={{ p:2, border: '1px solid blue', width: 200}}>
+        <Box component="section" sx={{ p:2, border: '1px solid #0094c6', width: 200}}>
         <h1>Friend</h1>
         <ul class="mdc-list mdc-list--two-line">
           <li class="mdc-list-item" tabindex="0">
