@@ -1,6 +1,8 @@
 import MusicNoteSharpIcon from '@mui/icons-material/MusicNoteSharp';
 import { Box, Stack } from "@mui/material"
-import Friendlist from './friendslist.jsx';
+import  Friendlist  from './friendslist.jsx';
+import Friendlistabby from './abby.jsx';
+import Friendlistsally from './sally.jsx';
 import Button from '@mui/material/Button';
 
 const Home = () => {
@@ -16,8 +18,9 @@ const Home = () => {
       <div className="homeFriendsList"> 
       <Stack direction="row" spacing={2}>
       <Friendlist  />
-      <Friendlist  />
-      <Friendlist  />
+      <Friendlistabby />
+      <Friendlistsally />
+
       </Stack>
       </div>
    
