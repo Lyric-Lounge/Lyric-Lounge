@@ -126,7 +126,7 @@ app.post('/api/login', async (req, res, next) => {
   const { username, password } = req.body;
   try {
     const userToken = await logInUser(username, password);
-    res.send({ token: userToken })
+    res.send({ access_token: userToken })
   } catch (err) {
     res.send({ message: ' Incorrect Username or Password' })
   }
