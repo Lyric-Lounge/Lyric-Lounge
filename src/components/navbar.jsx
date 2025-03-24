@@ -64,12 +64,12 @@ const NavBar = () => {
         <Box sx={{ display: "flex", gap: 2 }}>
           <Button color="inherit" component={Link} to="/">Homepage</Button>
           <Button color="inherit" component={Link} to="/profile">Profile</Button>
+          <Button color="inherit" component={Link} to="/player">Media Player</Button>
           {!token ? (
             <>
               <Button color="inherit" component={Link} to="/login">Login</Button>
               <Button color="inherit" component={Link} to="/register">Register</Button>
-              <Button color="inherit" component={Link} to="/spotify-login">Spotify Login</Button>
-              <Button color="inherit" component={Link} to="/player">Media Player</Button>
+              {/* <Button color="inherit" component={Link} to="/spotify-login">Spotify Login</Button> */}
             </>
           ) : (
             <Button color="inherit" onClick={handleLogout}>Logout</Button>
