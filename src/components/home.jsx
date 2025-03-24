@@ -13,7 +13,6 @@ const Home = () => {
       </header>
       
       <Box sx={{ display: 'flex',  justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
-        <h2>Home Page</h2>
       </Box>
       <div className="homeFriendsList"> 
       <Stack direction="row" spacing={2}>
