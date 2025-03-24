@@ -51,3 +51,15 @@ div.homeFriendsList {
   justify-content: center;
   align-items: center;
 }
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profileFriendsList {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}

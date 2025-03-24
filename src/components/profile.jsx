@@ -10,7 +10,7 @@ const Profile = () => {
   const [selectedSong, setSelectedSong] = useState("");
   const [username, setUsername] = useState("");
 
-  const songList = ["Song 1", "Song 2", "Song 3", "Song 4"];
+  const songList = ["Gooey", "Pawn It All", "Infinite Bloom", "Instant Crush"];
 
   const addTopSong = () => {
     if (selectedSong && !topSongs.includes(selectedSong)) {
