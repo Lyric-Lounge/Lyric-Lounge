@@ -8,7 +8,7 @@ import SplashScreen from './components/SplashPage.jsx';
 import Profile from './components/profile.jsx';
 import ProtectedRoute from './components/ProtectedRoutes.jsx';
 import Logout from "./components/Logout.jsx";
-import Player from './components/Player.jsx';
+import AudioPlayer from "./components/Player.jsx";
 
 const App = () => {
 
@@ -28,7 +28,7 @@ const App = () => {
         {/* Protected Routes */}
         <Route path="/home" element={<ProtectedRoute element={<Home />} />} />
         <Route path="/profile" element={<ProtectedRoute element={<Profile />} />} />
-        <Route path="/player" element={<ProtectedRoute element={<Player />} />} />
+        <Route path="/player" element={<ProtectedRoute element={<AudioPlayer />} />} />
 
         {/* Logout Route */}
         <Route path="/logout" element={<Logout />} />
